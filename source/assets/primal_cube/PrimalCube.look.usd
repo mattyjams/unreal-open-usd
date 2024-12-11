@@ -18,5 +18,19 @@ def "PrimalCube"
         references = @./mtlx/PrimalCube.mtlx@</MaterialX>
     )
     {
+        def "Materials"
+        {
+            def "PrimalCube"
+            {
+                token outputs:unreal:surface.connect = </PrimalCube/Materials/Materials/PrimalCube/UnrealShader.outputs:out>
+
+                def Shader "UnrealShader"
+                {
+                    uniform token info:implementationSource = "sourceAsset"
+                    uniform asset info:unreal:sourceAsset = @/OpenUSDGames/Assets/primal_cube/Materials/MI_M_PrimalCube_0_TwoSided.MI_M_PrimalCube_0_TwoSided@
+                    token outputs:out
+                }
+            }
+        }
     }
 }
