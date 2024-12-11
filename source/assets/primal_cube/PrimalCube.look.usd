@@ -4,3 +4,19 @@
     metersPerUnit = 0.01
     upAxis = "Z"
 )
+
+def "PrimalCube"
+{
+    def "geom" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </PrimalCube/Materials/Materials/PrimalCube>
+    }
+
+    def Scope "Materials" (
+        references = @./mtlx/PrimalCube.mtlx@</MaterialX>
+    )
+    {
+    }
+}
